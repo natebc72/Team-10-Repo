@@ -2,8 +2,6 @@
 # Author Jason Harrison
 
 
-from re import S
-
 
 def main():
    board = create_board
