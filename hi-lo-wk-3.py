@@ -4,7 +4,7 @@ import random
 class Player:
     def __init__(self):
         self.score = 300
-    #Comment here
+    #Method player_score will return the value of the score attribute
     def player_score(self):
         return self.score
 # The 'Game' class is designed to create and set the values of the cards and the user input,
@@ -16,7 +16,7 @@ class Game:
         self.player_choice = " "
         self.winner = True
 
-
+    #Method that will return the value for the next cad
     def get_next_card_value(self):
         return self.next_card_value
 
