@@ -76,7 +76,12 @@ while play_again == "y":
     if game.winner == True:
         player.score += 100
     elif game.winner == False:
-        player.score -= 75      
+        player.score -= 75     
+
+    if player.score <= 0:
+        print('Game Over!')
+        break
+
     print(f'Your score is: {player.score}')
     # The new card needs to be set and the current card value in case the user chooses
     # to play again.
