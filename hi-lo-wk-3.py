@@ -1,10 +1,11 @@
+# This was done together over Zoom with Nate, Marcos, and Jer. 
 
 import random
 # This class sets the player's points, and is updated based on the functions of the gameplay
 class Player:
     def __init__(self):
         self.score = 300
-    #Comment here
+    #Method player_score will return the value of the score attribute
     def player_score(self):
         return self.score
 # The 'Game' class is designed to create and set the values of the cards and the user input,
@@ -16,9 +17,20 @@ class Game:
         self.player_choice = " "
         self.winner = True
 
-
+    #Method that will return the value for the next cad
     def get_next_card_value(self):
         return self.next_card_value
+    #Method to generate the next card and make sure that the next card is not equal to the actual card.
+    def generate_next_card(self):
+        card = random.randint(1,13)
+        while True:
+            #print(f'New Card Value = {card} , actual card {self.card_value}')
+            if self.card_value == card:
+                card = random.randint(1,13)
+                continue
+            break
+        self.next_card_value = card
+
 
    # Two if-then statements are set here, taking input from the attributes of the class
    # and outputting and answer, then testing the user-based answer against the corect
@@ -54,17 +66,23 @@ play_again = "y"
 while play_again == "y":
     print(f'The card is: {game.card_value}')
     game.player_choice = input("Higher or lower? [h/l]: ")
-    game.next_card_value = random.randint(2,12)
+    game.generate_next_card()
+
     print(f'The next card was: {game.next_card_value}')
     game.is_winner()
     # After values are set and placed into their corresponding object variables,
     # the is_winner function needs to run, within the game object. If True is
     # returned, the player.score attribute within the player object is increased
-    # by 100. If False is returned, 100 points are taken away.
+    # by 100. If False is returned, 75 points are taken away.
     if game.winner == True:
         player.score += 100
     elif game.winner == False:
-        player.score -= 75      
+        player.score -= 75     
+
+    if player.score <= 0:
+        print('Game Over!')
+        break
+
     print(f'Your score is: {player.score}')
     # The new card needs to be set and the current card value in case the user chooses
     # to play again.
