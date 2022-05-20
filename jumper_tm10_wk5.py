@@ -4,6 +4,7 @@
 
 import random
 
+# J'DEE
 # The puzzle is a secret word randomly chosen from a list.
 # # Words Class
 # # init
@@ -14,6 +15,7 @@ import random
 # # # # set_word(self)
 # # # # # logic (random.xyz)
 
+# NATE
 # # Letters Class
 # # init
 # # # Attibutes
@@ -22,6 +24,7 @@ import random
 # # # # remove_letters(self)
 # # # # # logic: Removes letters as the user chooses them
 
+# JEREMY
 # # Rules Class
 # # init
 # # # Attributes:
@@ -31,25 +34,21 @@ import random
 # # # # self.winner -> boolean
 # # # super init
 # # Methods
-# # # If the guess is correct, the letter is revealed.
-# # # If the guess is incorrect, a line is cut on the player's parachute.
-# # # if num_wrong eq 1
-# # # # jumper_image eq 
-# # # elif num_wrong eq 2-5
-# # # # jumper_image eq ..
-# # # elif the player has no more parachute the game is over.
+# # # rules(self)
+# # # # If the guess is correct, the letter is revealed.
+# # # # If the guess is incorrect, a line is cut on the player's parachute.
+# # # # if num_wrong eq 1
+# # # # # jumper_image eq 
+# # # # elif num_wrong eq 2-5
+# # # # # jumper_image eq ..
+# # # # elif the player has no more parachute the game is over.
 # # # # If the puzzle is solved the game is over.
 
-
+# CALEB
 # # Display Class
 # # # Displays/updates the ASCII image
 
-# Classes
-# # Attribute (variables)
-# # Methods (functions)
-
-
-
+# MARCOS
 # main
 # Game rules
 # create the objects
