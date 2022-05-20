@@ -1,4 +1,3 @@
-
 import random
 #Comment here
 class Player:
@@ -55,8 +54,13 @@ while play_again == "y":
     if game.winner == True:
         player.score += 100
     elif game.winner == False:
-        player.score -= 100      
+        player.score -= 75      
     print(f'Your score is: {player.score}')
+    if player.score <= 0:
+        print("Your score is less than 0, How embarrassing! ")
+        play_again = ("n")
+    elif player.score > 0:
+        print("You did suprisingly well. Would you like to play again? [y/n]")    
     game.card_value = game.next_card_value
     play_again = input("Play again? [y/n]: ")
     print(" ")
