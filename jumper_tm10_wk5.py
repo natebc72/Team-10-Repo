@@ -39,14 +39,77 @@ import random
 # # # # If the guess is incorrect, a line is cut on the player's parachute.
 # # # # if num_wrong eq 1
 # # # # # jumper_image eq 
-# # # # elif num_wrong eq 2-5
+print("")
+print("    ___")
+print("   /___\\")
+print("   \\   /")    
+print("    \\ /")    
+print("     O")
+print("    /|\\")
+print("    / \\")
+print("")
+print("^^^^^^^^^^^^")
+# # # # elif num_wrong eq 2
 # # # # # jumper_image eq ..
+print("")
+print("    ")
+print("   /___\\")
+print("   \\   /")    
+print("    \\ /")    
+print("     O")
+print("    /|\\")
+print("    / \\")
+print("")
+print("^^^^^^^^^^^^")
+# # # # elif num_wrong eq 3
+# # # # # jumper_image eq ..
+print("")
+print("")
+print("")
+print("   \\   /")    
+print("    \\ /")    
+print("     O")
+print("    /|\\")
+print("    / \\")
+print("")
+print("^^^^^^^^^^^^")
+# # # # elif num_wrong eq 4
+# # # # # jumper_image eq ..
+print("")
+print("")
+print("")
+print("")    
+print("    \\ /")    
+print("     O")
+print("    /|\\")
+print("    / \\")
+print("")
+print("^^^^^^^^^^^^")
+# # # # elif num_wrong eq 5
+# # # # # jumper_image eq ..
+print("")
+print("")
+print("")
+print("")    
+print("")    
+print("     X")
+print("    /|\\")
+print("    / \\")
+print("")
+print("^^^^^^^^^^^^")
 # # # # elif the player has no more parachute the game is over.
 # # # # If the puzzle is solved the game is over.
 
 # CALEB
 # # Display Class
 # # # Displays/updates the ASCII image
+# _ _ _ _ _
+#
+#  
+
+
+   
+
 
 # MARCOS
 # main
