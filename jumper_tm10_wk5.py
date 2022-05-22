@@ -47,7 +47,7 @@ import random
 # CALEB
 # # Display Class
 # # # Displays the parachute and man. Requires the number of mistakes to know how much of the parachute to get rid of.
-class Display:
+class TerminalService:
 
     def __init__(self):
         #Seperatted each step into a picture which will disappear when there is a mistake.
