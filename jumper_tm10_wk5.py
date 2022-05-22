@@ -88,3 +88,15 @@ class Display:
 # User input
 # # 
 
+#def main():
+    #words = Words()
+    #letters = Letters()
+    #rules = Rules()
+    #display = Display()
+
+    #User Input
+    #rules.user_choice = input("Guess a letter [a-z]: ")
+    #rules.verify_letter(words.puzzle_word)
+    
+
+
