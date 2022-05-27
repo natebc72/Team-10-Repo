@@ -27,12 +27,12 @@ def set_word(self):
 
 # NATE
 # # Letters Class
-# # init
-# # # Attibutes
-# # # # self.letters -> array
-# # Methods
-# # # # remove_letters(self)
-# # # # # logic: Removes letters as the user chooses them
+"""""variable will hold the gueesed letters"""
+lettersGuessed = ""
+"""logic: Removes letters as the user chooses them and stores them into the variable."""
+"""guess is a placeholder for the user input."""
+lettersGuessed = lettersGuessed + guess(userinput)
+
 
 # JEREMY
 # # Rules Class
