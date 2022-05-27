@@ -13,8 +13,8 @@ class words:
                 puzzle_word: the chosen word for the game
     """
 def __init__(self):
-    self.words = ["books", "class", "games", "plant", "water"]
-    self.puzzle_word = ""
+    self._words = ["books", "class", "games", "plant", "water"]
+    self._puzzle_word = ""
 # # # Methods
 # # # # set_word(self)
 def set_word(self):
@@ -22,7 +22,7 @@ def set_word(self):
     
     Arguments: self: an insance of words.
     """
-    self.puzzle_word = random.self.words()
+    self._puzzle_word = random._self.words()
 # # # # # logic (random.xyz)
 
 # NATE
