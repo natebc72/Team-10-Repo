@@ -83,21 +83,35 @@ class Game():
         while term_serv.num_wrong != 5:
             while self.winner != True:
                 game_letter.add_letters()
+                """This loop checks the puzzle array against the user's choice."""
                 for i in puzzle_array:
+                    """If the user choice is the same as the piece of the puzzle it's checking
+                    in the loop then..."""
                     if (game_letter.user_choice == i):
+                        """print this and..."""
                         print("Super Duper!")
+                        """We need to find the spot where the letter goes. We use the index function
+                        and put the number in the 'place' variable then..."""
                         place = puzzle_array.index(i)
+                        """...replace the underscore in the answer array with the value from the user choice."""
                         self.answer_array[place] = i
+                        """The right answer is true, which variable is used later down the loop..."""
                         right_answer = True
                         break
                     else:
                         right_answer = False
+                """The if statement below takes the returned value of the letters class, which 
+                is the test if the letter had already been guessed, and adds the user choice to the
+                letters for display if it returns false."""
                 if game_letter.already_guessed == False:
                     letters += game_letter.user_choice
+                """If the right answer is false, then the num_wrong increases, and the method in the 
+                terminalserver class is called upon to remove a part of the whole_jumper's parachute."""
                 if right_answer == False:
                     term_serv.num_wrong += 1
                     term_serv.remove_chute()                
                 print(" ")
+                """I know there's a simpler way to do this, but it's 2am."""
                 print(game_play.answer_array[0], game_play.answer_array[1], game_play.answer_array[2],game_play.answer_array[3],game_play.answer_array[4])
                 print(" ")
                 print(f'\nNumber of wrong guesses: {term_serv.num_wrong}\n')
@@ -105,10 +119,13 @@ class Game():
                 print(" ")
                 print(f'letters you have guessed: {letters}\n')
                 print("")
+                """This calls the 'count' function to see if there are any underscores. If not, then the word
+                is filled, and the user wins. Hurray!"""
                 if self.answer_array.count(" _ ") == 0:
                     print("You have won!")
                     self.winner == True
                     return self.winner
+                """It's a bit dark, I know, but it's also 2am, and it's dark outside. Too early for flapjacks???"""
                 if term_serv.num_wrong >= 5:
                     print("That's too many wrong. I'm sorry, your jumper's parachute stopped functioning, and now they are dead.")
                     break
