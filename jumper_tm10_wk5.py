@@ -44,7 +44,7 @@ class Letters():
 # # # remove_letters(self)
 
     def add_letters(self):
-        self.user_choice = input("Choose a letter: ")
+        self.user_choice = input("Guess a letter [a-z]: ")
         for i in self.letters_array:
             if i == self.user_choice:
                 print("You already guessed this. Try again.")
@@ -73,7 +73,6 @@ class Game():
         letters = ""
         """term_serv is the object created from the TerminalService class, and display is the method within that
         class."""
-        term_serv.display()
         puzzle_array = game_word.set_word()
         """A for loop is here to call the letters array from the Letter class"""
         for i in game_letter.letters_array:
@@ -114,9 +113,9 @@ class Game():
                 """I know there's a simpler way to do this, but it's 2am."""
                 print(game_play.answer_array[0], game_play.answer_array[1], game_play.answer_array[2],game_play.answer_array[3],game_play.answer_array[4])
                 print(" ")
-                print(f'\nNumber of wrong guesses: {term_serv.num_wrong}\n')
                 term_serv.display()
                 print(" ")
+                print(f'\nNumber of wrong guesses: {term_serv.num_wrong}\n')
                 print(f'letters you have guessed: {letters}\n')
                 print("")
                 """This calls the 'count' function to see if there are any underscores. If not, then the word
@@ -166,6 +165,8 @@ class TerminalService:
 
     def display(self):
         print(*self._whole_picture, sep='\n')
+        print("")
+        print("^^^^^^^^")
 
         
 game_play = Game()
