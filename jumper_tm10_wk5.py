@@ -31,7 +31,7 @@ def set_word(self):
 lettersGuessed = ""
 """logic: Removes letters as the user chooses them and stores them into the variable."""
 """guess is a placeholder for the user input."""
-lettersGuessed = lettersGuessed + guess
+lettersGuessed = lettersGuessed + guess(userinput)
 
 
 # JEREMY
