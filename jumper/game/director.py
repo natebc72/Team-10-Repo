@@ -45,6 +45,11 @@ class Director:
         """
         new_letter = self._terminal_service.read_text("\nGuess a letter [a-z]: ")
         self._player.set_letter(new_letter)
+        if self._player.is_letter_in_letters():
+            print("Letter already chosen! Try again")
+            self._get_inputs()
+        else:
+            self._player.append_letter(new_letter)
         
     def _do_updates(self):
         """Keeps watch on where the seeker is moving.
@@ -54,7 +59,10 @@ class Director:
         """
         self._game._get_hidden_word_list(self._player.get_letters())
         if self._game._is_letter_in_word(self._player._letter) == False:
-            self._terminal_service.set_num_wrong(1)
+            num_wrong = self._terminal_service.get_num_wrong()
+            num_wrong += 1
+            self._terminal_service.set_num_wrong(num_wrong)
+            self._terminal_service.remove_chute()
            
         
         
@@ -64,8 +72,15 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
+        print()
         self._terminal_service.display_word(self._game._hidden_word)
+        print()
         self._terminal_service.display()
        
-        if self._game.is_terminal():
+        if self._game.is_winner():
+            self._terminal_service.write_text("You have won!")
             self._is_playing = False
+        elif self._terminal_service.get_num_wrong() == 5:
+            self._is_playing = False
+            print("That's too many wrong. I'm sorry, your jumper's parachute stopped functioning, and now they are dead.")
+            

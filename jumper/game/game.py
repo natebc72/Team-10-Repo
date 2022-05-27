@@ -24,7 +24,7 @@ class Game:
             return True
         return False
 
-    def is_terminal(self):
+    def is_winner(self):
         count = 0
         for i in range(len(self._word)):
             if self._word[i] != self._hidden_word[i]:

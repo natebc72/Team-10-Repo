@@ -5,43 +5,43 @@ class TerminalService:
     terminal.
     """
     def __init__(self):
-        #Seperatted each step into a picture which will disappear when there is a mistake.
-        self._num_wrong = 0
-        self.first_mistake = "  ___"
-        self.second_mistake = " /___\ "
+        #Separated each step into a picture which will disappear when there is a mistake.
+        self._first_mistake = "  ___"
+        self._second_mistake = " /___\ "
         #The third mistake is actually just the second line without the / and \.
-        self.third_mistake = "  ___"
-        self.fourth_mistake = " \   /"
-        self.fifth_mistake = "  \ /"
-        self.guy = "   o\n  /|\ \n  / \ "
+        self._third_mistake = "  ___"
+        self._fourth_mistake = " \   /"
+        self._fifth_mistake = "  \ /"
+        self._guy = "   o\n  /|\ \n  / \ "
         #Dead guy is used at the very end to represent a loss.
-        self.dead_guy = "   x\n  /|\ \n  / \ "
+        self._dead_guy = "   x\n  /|\ \n  / \ "
         #Decided to combine all of the different pictures into an array so I could print it easier.
-        self.whole_picture = [self.first_mistake, self.second_mistake, self.fourth_mistake, self.fifth_mistake, self.guy]
-
+        self._whole_picture = [self._first_mistake, self._second_mistake, self._fourth_mistake, self._fifth_mistake, self._guy]
+        self._num_wrong = 0
+        
+    #display function uses if statements to change the array and then displays it 
+    def remove_chute(self):
+        if (self._num_wrong == 1) | (self._num_wrong == 3) | (self._num_wrong == 4):
+            self._whole_picture.remove(self._whole_picture[0])
+        elif self._num_wrong == 2:
+            #replaces second_mistake with third_mistake
+            self._whole_picture[0] = self._third_mistake
+        elif self._num_wrong == 5:
+            self._whole_picture.remove(self._whole_picture[0])
+            self._whole_picture[0] = self._dead_guy
+        elif self._num_wrong <=0:
+            self._whole_picture = self._whole_picture
+        return self._whole_picture
         #display function uses if statements to change the array and then displays it 
     def get_num_wrong(self):
         return self._num_wrong
 
     def set_num_wrong(self,num_mistake):
-        self._num_wrong += num_mistake
-
+        self._num_wrong = num_mistake
 
     def display(self):
-        if self._num_wrong >= 1:
-            self.whole_picture.remove("  ___")
-        if self._num_wrong >= 2:
-            #replaces second_mistake with third_mistake
-            self.whole_picture[0] = self.third_mistake
-        if self._num_wrong >= 3:
-            self.whole_picture.remove("  ___")
-        if self._num_wrong >= 4:
-            self.whole_picture.remove(" \   /")
-        if self._num_wrong >= 5:
-            self.whole_picture.remove("  \ /")
-            self.whole_picture[0] = self.dead_guy
         print()
-        print(*self.whole_picture, sep='\n')
+        print(*self._whole_picture, sep='\n')
 
     def display_word(self, word):
         for i in word:
