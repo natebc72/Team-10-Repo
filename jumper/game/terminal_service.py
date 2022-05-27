@@ -6,6 +6,7 @@ class TerminalService:
     """
     def __init__(self):
         #Seperatted each step into a picture which will disappear when there is a mistake.
+        self._num_wrong = 0
         self.first_mistake = "  ___"
         self.second_mistake = " /___\ "
         #The third mistake is actually just the second line without the / and \.
@@ -19,19 +20,27 @@ class TerminalService:
         self.whole_picture = [self.first_mistake, self.second_mistake, self.fourth_mistake, self.fifth_mistake, self.guy]
 
         #display function uses if statements to change the array and then displays it 
-    def display(self, num_wrong):
-        if num_wrong >= 1:
+    def get_num_wrong(self):
+        return self._num_wrong
+
+    def set_num_wrong(self,num_mistake):
+        self._num_wrong += num_mistake
+
+
+    def display(self):
+        if self._num_wrong >= 1:
             self.whole_picture.remove("  ___")
-        if num_wrong >= 2:
+        if self._num_wrong >= 2:
             #replaces second_mistake with third_mistake
             self.whole_picture[0] = self.third_mistake
-        if num_wrong >= 3:
+        if self._num_wrong >= 3:
             self.whole_picture.remove("  ___")
-        if num_wrong >= 4:
+        if self._num_wrong >= 4:
             self.whole_picture.remove(" \   /")
-        if num_wrong >= 5:
+        if self._num_wrong >= 5:
             self.whole_picture.remove("  \ /")
             self.whole_picture[0] = self.dead_guy
+        print()
         print(*self.whole_picture, sep='\n')
 
     def display_word(self, word):

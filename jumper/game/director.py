@@ -53,7 +53,9 @@ class Director:
             self (Director): An instance of Director.
         """
         self._game._get_hidden_word_list(self._player.get_letters())
-        self._game._is_letter_in_word(self._player._letter)
+        if self._game._is_letter_in_word(self._player._letter) == False:
+            self._terminal_service.set_num_wrong(1)
+           
         
         
     def _do_outputs(self):
@@ -63,6 +65,7 @@ class Director:
             self (Director): An instance of Director.
         """
         self._terminal_service.display_word(self._game._hidden_word)
+        self._terminal_service.display()
        
         if self._game.is_terminal():
             self._is_playing = False
