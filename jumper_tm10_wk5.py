@@ -142,17 +142,17 @@ class TerminalService:
     #display function uses if statements to change the array and then displays it 
     def display(self, num_wrong):
         if num_wrong >= 1:
-            self.whole_picture[0] = ""
+            self.whole_picture.remove("  ___")
         if num_wrong >= 2:
             #replaces second_mistake with third_mistake
-            self.whole_picture[1] = self.third_mistake
+            self.whole_picture[0] = self.third_mistake
         if num_wrong >= 3:
-            self.whole_picture[1] = ""
+            self.whole_picture.remove("  ___")
         if num_wrong >= 4:
-            self.whole_picture[2] = ""
+            self.whole_picture.remove(" \   /")
         if num_wrong >= 5:
-            self.whole_picture[3] = ""
-            self.whole_picture[4] = self.dead_guy
+            self.whole_picture.remove("  \ /")
+            self.whole_picture[0] = self.dead_guy
         print(*self.whole_picture, sep='\n')
 >>>>>>> 4bfdc7daf2b6c65c541cc2848867484de3d3ade4
 
