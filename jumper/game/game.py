@@ -1,7 +1,7 @@
 
 import random
 
-class Puzzle:
+class Game:
     def __init__(self):
         self._word = self._get_random_word(['book','pen'])
         self._hidden_word = []
@@ -18,6 +18,11 @@ class Puzzle:
                     self._hidden_word[i] = letter
         
         return self._hidden_word
+
+    def _is_letter_in_word(self,letter):
+        if letter in self._word:
+            return True
+        return False
 
     def is_terminal(self):
         count = 0

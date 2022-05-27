@@ -1,6 +1,6 @@
 from game.terminal_service import TerminalService
 from game.player import Player
-from game.puzzle import Puzzle
+from game.game import Game
 
 
 class Director:
@@ -23,7 +23,7 @@ class Director:
         """
         self._player = Player()
         self._is_playing = True
-        self._puzzle = Puzzle()
+        self._game = Game()
         self._terminal_service = TerminalService()
         
     def start_game(self):
@@ -52,7 +52,8 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self._puzzle._get_hidden_word_list(self._player.get_letters())
+        self._game._get_hidden_word_list(self._player.get_letters())
+        self._game._is_letter_in_word(self._player._letter)
         
         
     def _do_outputs(self):
@@ -61,7 +62,7 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-    
-        self._terminal_service.write_text(self._puzzle._get_hidden_word_list(self._player.get_letters()))
-        if self._puzzle.is_terminal():
+        self._terminal_service.display_word(self._game._hidden_word)
+       
+        if self._game.is_terminal():
             self._is_playing = False
