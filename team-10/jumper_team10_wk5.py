@@ -6,7 +6,7 @@ import random
 
 # J'DEE
 # The puzzle is a secret word randomly chosen from a list.
-class words:
+class Words:
     """ The responsibility of this class is to generate and randomly pick from a list of words.
     
     Attributes: words: an array of words to choose from
@@ -14,7 +14,7 @@ class words:
     """
 def __init__(self):
     self._words = ["books", "class", "games", "plant", "water"]
-    self._puzzle_word = ""
+    self.puzzle_word = ""
 # # # Methods
 # # # # set_word(self)
 def set_word(self):
@@ -22,7 +22,9 @@ def set_word(self):
     
     Arguments: self: an insance of words.
     """
-    self._puzzle_word = random._self.words()
+    self.puzzle_word = random._self.words()
+    return self.puzzle_word
+
 # # # # # logic (random.xyz)
 
 # NATE
