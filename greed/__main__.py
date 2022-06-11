@@ -110,6 +110,7 @@ def main():
 
     for n in range(40):
         list = ["gem", "rock"]
+        text = ""
         object_type = random.choice(list)
         x = random.randint(1, COLS - 1)
         y = MAX_Y
@@ -118,15 +119,17 @@ def main():
         value = 0
         if (object_type == "gem"):
             value = 1
+            text = "*"
         else:
             value = -1
-            
+            text = "O"
         r = random.randint(0, 255)
         g = random.randint(0, 255)
         b = random.randint(0, 255)
         color = Color(r, g, b)
         
         object = Objects()
+        object.set_text(text)
         object.set_type(object_type)
         object.set_font_size(FONT_SIZE)
         object.set_color(color)
@@ -136,9 +139,9 @@ def main():
     
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
-    # video_service = VideoService(CAPTION, 0, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
-    # director = Director(keyboard_service, video_service, 0)
-    # director.start_game(cast)
+    video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
+    director = Director(keyboard_service, video_service, 0)
+    director.start_game(cast)
 
 
 if __name__ == "__main__":
