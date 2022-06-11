@@ -64,7 +64,7 @@ FONT_SIZE = 15
 COLS = 60
 ROWS = 40
 CAPTION = "GREED"
-WHITE = Color()
+WHITE = Color(255,255,255)
 
 
 def main():
@@ -74,6 +74,7 @@ def main():
     # create the cast
     cast = Cast()
     
+    """Initial test:"""
     group1 = "Johnson"
     
     cast.add_actor(group1, "actor1")
@@ -84,6 +85,8 @@ def main():
     x = MAX_X / 2
     y = 10
     position = Point(x, y)
+    
+    """End of initial test"""
     
     # creating the robot itself
     robot = Actor()
@@ -105,29 +108,34 @@ def main():
     
     
 
-    # for n in range(DEFAULT_ARTIFACTS):
-    #     text = chr(random.randint(33, 126))
-    #     message = messages[n]
-
-    #     x = random.randint(1, COLS - 1)
-    #     y = random.randint(1, ROWS - 1)
-    #     position = Point(x, y)
-    #     position = position.scale(CELL_SIZE)
-
-    #     r = random.randint(0, 255)
-    #     g = random.randint(0, 255)
-    #     b = random.randint(0, 255)
-    #     color = Color(r, g, b)
+    for n in range(40):
+        list = ["gem", "rock"]
+        object_type = random.choice(list)
+        x = random.randint(1, COLS - 1)
+        y = MAX_Y
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+        value = 0
+        if (object_type == "gem"):
+            value = 1
+        else:
+            value = -1
+            
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
         
-    #     artifact.set_text(text)
-    #     artifact.set_font_size(FONT_SIZE)
-    #     artifact.set_color(color)
-    #     artifact.set_position(position)
-    #     artifact.set_message(message)
-    #     cast.add_actor("artifacts", artifact)
+        object = Objects()
+        object.set_type(object_type)
+        object.set_font_size(FONT_SIZE)
+        object.set_color(color)
+        object.set_position(position)
+        object.set_value(value)
+        cast.add_actor("rocks_and_gems", object)
     
     # start the game
-    # keyboard_service = KeyboardService(CELL_SIZE)
+    keyboard_service = KeyboardService(CELL_SIZE)
     # video_service = VideoService(CAPTION, 0, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
     # director = Director(keyboard_service, video_service, 0)
     # director.start_game(cast)
