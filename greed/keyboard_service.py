@@ -21,7 +21,7 @@ class KeyboardService:
         """
         self._cell_size = cell_size
     
-    def getdirection(self):
+    def get_direction(self):
         """Gets the selected direction based on the currently pressed keys.
 
         Returns:
