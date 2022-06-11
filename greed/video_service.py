@@ -17,7 +17,7 @@ class VideoService:
         self._width = width
         self._height = height
         self._cell_size = cell_size
-        self._framerate = framerate
+        self._frame_rate = framerate
         self._debug = debug
 
     def close_window(self):
