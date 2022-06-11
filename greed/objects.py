@@ -1,4 +1,4 @@
-from greed.actor import Actor
+from actor import Actor
 
 class Objects(Actor):
     """
@@ -9,8 +9,9 @@ class Objects(Actor):
     def __init__(self):
         """Constructs a new Actor."""
         self._type = ""
+        self._value = ""
             
-    def get_tyoe(self):
+    def get_type(self):
         """Gets the Object type.
         
         Returns:
@@ -22,7 +23,23 @@ class Objects(Actor):
         """Updates the Object Type.
         
         Args:
-            type (string): The Objetct Type Gem or Rock.
+            type (string): The Object Type Gem or Rock.
         """
         self._type = type
+        
+    def get_value(self):
+        """Gets the Object type.
+        
+        Returns:
+            string: The Obejct type Gem or Rock.
+        """
+        return self._value
+    
+    def set_value(self, value):
+        """Updates the Object Type.
+        
+        Args:
+            type (string): The Object Type Gem or Rock.
+        """
+        self._value = value
 
