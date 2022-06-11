@@ -1,5 +1,5 @@
 import pyray
-from greed.point import Point
+from point import Point
 class KeyboardService:
     """
     J'Dee
