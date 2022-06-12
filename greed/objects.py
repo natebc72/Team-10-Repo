@@ -7,7 +7,7 @@ class Objects(Actor):
     Assign each object a value
     """
     def __init__(self):
-        """Constructs a new Actor."""
+        """Constructs a new Object."""
         self._type = ""
         self._value = ""
             
