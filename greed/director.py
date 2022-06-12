@@ -54,19 +54,19 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
-        banner = cast.get_first_actor("banners")
+        scoreboard = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
-        object = cast.get_actors("objects")
+        object = cast.get_actors("rocks_and_gems")
 
-        banner.set_text("")
+        scoreboard.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
         
         for objects in object:
             if robot.get_position().equals(objects.get_position()):
-                score = objects.get_score() + score
-                cast.remove_actor(object, object)
+                """score = objects.get_score() + score
+                cast.remove_actor(object, object)"""
                     
         
     def _do_outputs(self, cast):

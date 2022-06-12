@@ -1,4 +1,4 @@
-import random
+
 import os
 import random
 
@@ -75,11 +75,11 @@ def main():
     cast = Cast()
     
     """Initial test:"""
-    group1 = "Johnson"
+    """group1 = "Johnson"
     
     cast.add_actor(group1, "actor1")
     cast.get_actors(group1)
-    cast.get_first_actor(group1)
+    cast.get_first_actor(group1)"""
     
     # location of the robot
     x = MAX_X / 2
@@ -93,7 +93,7 @@ def main():
     robot.set_color(WHITE)
     robot.set_text("#")
     robot.set_font_size(FONT_SIZE)
-    robot.set_position(position)
+    robot.set_position(Point(450,580))
     cast.add_actor("robots", robot)
     
     

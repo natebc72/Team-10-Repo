@@ -8,6 +8,7 @@ class Objects(Actor):
     """
     def __init__(self):
         """Constructs a new Actor."""
+        super().__init__()
         self._type = ""
         self._value = ""
             
