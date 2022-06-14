@@ -103,7 +103,7 @@ def main():
     scoreboard.set_text(f'Your score is {score}. ')
     scoreboard.set_font_size(FONT_SIZE)
     scoreboard.set_color(WHITE)
-    scoreboard.set_position(Point(590, 15))
+    scoreboard.set_position(Point(1, 1))
     cast.add_actor("banners", scoreboard)
     
     
