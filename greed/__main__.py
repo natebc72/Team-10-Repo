@@ -113,10 +113,11 @@ def main():
         text = ""
         object_type = random.choice(list)
         x = random.randint(1, COLS - 1)
-        y = MAX_Y
+        y = 1
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
         value = 0
+        velocity = random.randint(3, 15)
         if (object_type == "gem"):
             value = 1
             text = "*"
@@ -135,7 +136,8 @@ def main():
         object.set_color(color)
         object.set_position(position)
         object.set_value(value)
-        cast.add_actor("rocks_and_gems", object)
+        object.set_velocity(Point(0, velocity))
+        cast.add_actor("objects", object)
     
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
