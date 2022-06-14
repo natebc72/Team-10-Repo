@@ -13,7 +13,7 @@ class Director:
         _video_service (VideoService): For providing video output.
     """
 
-    def __init__(self, keyboard_service, video_service, score):
+    def __init__(self, keyboard_service, video_service,):
         """Constructs a new Director using the specified keyboard and video services. Also enables the score class.
         
         Args:
@@ -23,7 +23,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
-        self.score = score
+        self.score = 0
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -56,17 +56,18 @@ class Director:
         """
         scoreboard = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
-        object = cast.get_actors("rocks_and_gems")
+        object = cast.get_actors("objects")
 
-        scoreboard.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
         
         for objects in object:
+            objects.move_next(max_x, max_y)
             if robot.get_position().equals(objects.get_position()):
-                """score = objects.get_score() + score
-                cast.remove_actor(object, object)"""
+                self.score += objects.get_value()
+                scoreboard.set_text(f'Your score is {self.score}. ')
+                cast.remove_actor("objects", objects)
                     
         
     def _do_outputs(self, cast):
