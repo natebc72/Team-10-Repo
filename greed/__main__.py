@@ -11,58 +11,12 @@ from color import Color
 from point import Point
 from objects import Objects
 
-"""
-
-Draw the screen
-Define controlled object (main robot)
-    Set rules for the controlled object
-        size, position, left/right movement
-
-Define objects(actors)
-Define the robot(actors)
-Create actors(cast)
-Create cast
-
-
-
-Define automated scrolling objects
-    OBJECT CLASS(POINT, COLOR):
-    Set general rules for the objects
-        where do they initiate
-            Top of the screen (use Point class)
-        how often do they initiate
-            every second?
-        How many at a time?
-            5?
-        how are they terminated
-            When it goes off screen
-            When the position of the object is close enough to the robot
-    Set specific rules for objects
-        ROCKS CLASS(OBJECTS)
-        Rocks(Inherits from Objects)
-            Set the character to 'O'
-            What happens when the object comes into contact with the robot
-                Subtract 1 (Score -= 1)
-                Terminate object (remove from object array)
-        GEMS CLASS(OBJECTS)
-        Gems(Inherits from Objects)
-            Set the character display to '*'
-            What happens when the object comes into contact with the robot
-                Add 1 (Score += 1)
-                Terminate object (remove from object array)
-Create the objects
-
-            
-
-"""
 
 FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15
 FONT_SIZE = 15
-COLS = 60
-ROWS = 40
 CAPTION = "GREED"
 WHITE = Color(255,255,255)
 
