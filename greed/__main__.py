@@ -107,38 +107,6 @@ def main():
     cast.add_actor("banners", scoreboard)
     
     
-
-    for n in range(40):
-        list = ["gem", "rock"]
-        text = ""
-        object_type = random.choice(list)
-        x = random.randint(1, COLS - 1)
-        y = 1
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
-        value = 0
-        velocity = random.randint(3, 15)
-        if (object_type == "gem"):
-            value = 1
-            text = "*"
-        else:
-            value = -1
-            text = "O"
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        
-        object = Objects()
-        object.set_text(text)
-        object.set_type(object_type)
-        object.set_font_size(FONT_SIZE)
-        object.set_color(color)
-        object.set_position(position)
-        object.set_value(value)
-        object.set_velocity(Point(0, velocity))
-        cast.add_actor("objects", object)
-    
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
