@@ -1,7 +1,7 @@
 import constants
-from game.casting.actor import Actor
-from game.scripting.action import Action
-from game.shared.point import Point
+from actor import Actor
+from action import Action
+from point import Point
 
 class HandleCollisionsAction(Action):
     """
@@ -36,45 +36,45 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snake1 = cast.get_first_actor("snake1")
-        snake2 = cast.get_first_actor("snake2")
+        snake_one = cast.get_first_actor("snake1")
+        snake_two = cast.get_first_actor("snake2")
 
-        snake1_head = snake1.get_segments()[0]
-        snake1_segments = snake1.get_segments()[1:]
+        snake_one_head = snake_one.get_segments()[0]
+        snake_one_segments = snake_one.get_segments()[1:]
 
-        snake2_head = snake2.get_segments()[0]
-        snake2_segments = snake2.get_segments()[1:]
+        snake_two_head = snake_two.get_segments()[0]
+        snake_two_segments = snake_two.get_segments()[1:]
 
-        for segment in snake1_segments:
-            if snake1_head.get_position().equals(segment.get_position()):
+        for segment in snake_one_segments:
+            if snake_one_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 #snake1 collided with its segments
-        for segment in snake2_segments:
-            if snake2_head.get_position().equals(segment.get_position()):
+        for segment in snake_two_segments:
+            if snake_two_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 #snake2  collided with its segments
 
-    def _handle_snakes_collision(self,cast):
+    def _handle_snakes_collision(self, cast):
          """Sets the game over flag if the snake1 or snake2 collides with each other.
         
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snake1 = cast.get_first_actor("snake1")
-        snake2 = cast.get_first_actor("snake2")
+        snake_one = cast.get_first_actor("snake1")
+        snake_two = cast.get_first_actor("snake2")
 
-        snake1_head = snake1.get_segments()[0]
-        snake1_segments = snake1.get_segments()[1:]
+        snake_one_head = snake_one.get_segments()[0]
+        snake_one_segments = snake_one.get_segments()[1:]
 
-        snake2_head = snake2.get_segments()[0]
-        snake2_segments = snake2.get_segments()[1:]
+        snake_two_head = snake_two.get_segments()[0]
+        snake_two_segments = snake_two.get_segments()[1:]
 
-        for segment in snake1_segments:
-            if snake2_head.get_position().equals(segment.get_position()):
+        for segment in snake_one_segments:
+            if snake_two_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 #snake1 win
-        for segment in snake2_segments:
-            if snake1_head.get_position().equals(segment.get_position()):
+        for segment in snake_two_segments:
+            if snake_one_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
                 #snake2 win
 
@@ -85,11 +85,11 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         if self._is_game_over:
-            snake1 = cast.get_first_actor("snake1")
-            snake2 = cast.get_first_actor("snake2")
+            snake_one = cast.get_first_actor("snake1")
+            snake_two = cast.get_first_actor("snake2")
             
-            snake1_segments = snake1.get_segments()
-            snake2_segments = snake2.get_segments()
+            snake_one_segments = snake_one.get_segments()
+            snake_two_segments = snake_two.get_segments()
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -100,8 +100,8 @@ class HandleCollisionsAction(Action):
             message.set_position(position)
             cast.add_actor("messages", message)
 
-            for segment in snake1_segments:
+            for segment in snake_one_segments:
                 segment.set_color(constants.WHITE)
 
-            for segment in snake2_segments:
+            for segment in snake_two_segments:
                 segment.set_color(constants.WHITE)

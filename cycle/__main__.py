@@ -1,19 +1,17 @@
 import constants
 
-from game.casting.cast import Cast
-from game.casting.food import Food
-from game.casting.score import Score
-from game.casting.snake import Snake
-from game.scripting.script import Script
-from game.scripting.control_actors_action import ControlActorsAction
-from game.scripting.move_actors_action import MoveActorsAction
-from game.scripting.handle_collisions_action import HandleCollisionsAction
-from game.scripting.draw_actors_action import DrawActorsAction
-from game.directing.director import Director
-from game.services.keyboard_service import KeyboardService
-from game.services.video_service import VideoService
-from game.shared.color import Color
-from game.shared.point import Point
+from cast import Cast
+from snake import Snake
+from script import Script
+from control_actors_action import ControlActorsAction
+from move_actors_action import MoveActorsAction
+from handle_collisions_action import HandleCollisionsAction
+from draw_actors_action import DrawActorsAction
+from director import Director
+from keyboard_service import KeyboardService
+from video_service import VideoService
+from color import Color
+from point import Point
 
 
 def main():
