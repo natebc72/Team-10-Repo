@@ -17,6 +17,7 @@ class HandleCollisionsAction(Action):
     def __init__(self):
         """Constructs a new HandleCollisionsAction."""
         self._is_game_over = False
+        self._winner = 0
 
     def execute(self, cast, script):
         """Executes the handle collisions action.
@@ -72,14 +73,16 @@ class HandleCollisionsAction(Action):
         for segment in snake_one_segments:
             if snake_two_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
+                self._winner = 1
                 #snake1 win
         for segment in snake_two_segments:
             if snake_one_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
+                self._winner = 2
                 #snake2 win
 
     def _handle_game_over(self, cast):
-        """Shows the 'game over' message and turns the snake1 and snake2 white if the game is over.
+        """Shows the who won message and turns the snake1 and snake2 white if the game is over.
         
         Args:
             cast (Cast): The cast of Actors in the game.
@@ -96,7 +99,10 @@ class HandleCollisionsAction(Action):
             position = Point(x, y)
 
             message = Actor()
-            message.set_text("Game Over!")
+            if self._winner == 1:
+                message.set_text("Player One Wins!")
+            if self._winner == 2:
+                message.set_text("Player Two Wins")
             message.set_position(position)
             cast.add_actor("messages", message)
 
