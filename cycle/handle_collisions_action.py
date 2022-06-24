@@ -49,10 +49,12 @@ class HandleCollisionsAction(Action):
         for segment in snake_one_segments:
             if snake_one_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
+                self._winner = 2
                 #snake1 collided with its segments
         for segment in snake_two_segments:
             if snake_two_head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
+                self._winner = 1
                 #snake2  collided with its segments
 
     def _handle_snakes_collision(self, cast):
