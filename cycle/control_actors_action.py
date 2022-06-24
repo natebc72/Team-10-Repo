@@ -1,6 +1,7 @@
 import constants
 from action import Action
 from point import Point
+from snake import Snake
 
 
 class ControlActorsAction(Action):

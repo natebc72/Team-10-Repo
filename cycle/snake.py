@@ -15,7 +15,7 @@ class Snake(Actor):
     def __init__(self):
         super().__init__()
         self._segments = []
-        self._prepare_body()
+        #self._prepare_body()
 
     def get_segments(self):
         return self._segments

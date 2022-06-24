@@ -58,7 +58,7 @@ class HandleCollisionsAction(Action):
                 #snake2  collided with its segments
 
     def _handle_snakes_collision(self, cast):
-         """Sets the game over flag if the snake1 or snake2 collides with each other.
+        """Sets the game over flag if the snake1 or snake2 collides with each other.
         
         Args:
             cast (Cast): The cast of Actors in the game.
