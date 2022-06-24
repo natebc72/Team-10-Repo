@@ -34,7 +34,7 @@ class Snake(Actor):
     def get_head(self):
         return self._segments[0]
 
-    def grow_tail(self, number_of_segments):
+    def grow_tail(self, number_of_segments, player):
         for i in range(number_of_segments):
             tail = self._segments[-1]
             velocity = tail.get_velocity()
@@ -45,7 +45,10 @@ class Snake(Actor):
             segment.set_position(position)
             segment.set_velocity(velocity)
             segment.set_text("#")
-            segment.set_color(constants.GREEN)
+            if player == 1:
+                segment.set_color(constants.GREEN)
+            elif player == 2:
+                segment.set_color(constants.RED)
             self._segments.append(segment)
 
     def turn_head(self, velocity):
