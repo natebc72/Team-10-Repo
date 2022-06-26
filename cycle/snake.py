@@ -45,7 +45,7 @@ class Snake(Actor):
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
-            segment.set_text("#")
+            segment.set_text("~")
             if self.player == 1:
                 segment.set_color(constants.GREEN)
             if self.player == 2:
@@ -67,11 +67,11 @@ class Snake(Actor):
         for i in range(constants.SNAKE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
             velocity = Point(1 * constants.CELL_SIZE, 0)
-            text = "8" if i == 0 else "#"
+            text = "0~0" if i == 0 else "-"
             if self.player == 1:
-                color = constants.YELLOW if i == 0 else constants.GREEN
+                color = constants.BLUE if i == 0 else constants.GREEN
             if self.player == 2:
-                color = constants.YELLOW if i == 0 else constants.RED
+                color = constants.BLUE if i == 0 else constants.RED
             segment = Actor()
             segment.set_position(position)
             segment.set_velocity(velocity)
