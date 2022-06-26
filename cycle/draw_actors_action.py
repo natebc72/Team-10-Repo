@@ -31,6 +31,8 @@ class DrawActorsAction(Action):
         segments_one = snake_one.get_segments()
         segments_two = snake_two.get_segments()
         messages = cast.get_actors("messages")
+        snake_one.grow_tail(1)
+        snake_two.grow_tail(1)
 
         self._video_service.clear_buffer()
         self._video_service.draw_actors(segments_one)
