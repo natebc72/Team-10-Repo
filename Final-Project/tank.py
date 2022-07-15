@@ -14,6 +14,7 @@ class Tank(Actor):
         super().__init__()
         self.player = player
         self._body = []
+        self._prepare_body()
         
     def get_body():
         return self._body
