@@ -5,7 +5,10 @@ from point import Point
 
 class Tank(Actor):
     """
-    [o]
+    <=>
+      P
+    |/\|
+    |\/|
 
     Attributes:
         _points (int): The number of points the food is worth.

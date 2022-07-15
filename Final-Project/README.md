@@ -11,7 +11,7 @@ keyboard_service - change keys used and add firing - Nate
 video service - fine
 action - fine
 draw actors action - changed to draw tanks instead of snakes - Jeremy
-handle collisions action - all of it changed to make bullet hitting tank end game - Jeremy
+handle collisions action - all of it changed to make bullet hitting tank end game - Caleb
 control actors action - same changes as keyboard service and then change snakes to tanks - Nate
 tank - child actor move up and down (if more time left and right and turn gun) - Marco
 point - fine

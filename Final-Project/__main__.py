@@ -11,14 +11,16 @@ from keyboard_service import KeyboardService
 from video_service import VideoService
 from color import Color
 from point import Point
+from tank import Tank
+
 
 
 def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("snake1", Snake(1))
-    cast.add_actor("snake2", Snake(2))
+    cast.add_actor("tank1", tank())
+    cast.add_actor("tank2", tank())
    
     # start the game
     keyboard_service = KeyboardService()
