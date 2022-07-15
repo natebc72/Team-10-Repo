@@ -15,7 +15,6 @@ class Tank(Actor):
         self.player = player
 
     def fire_bullet(self):
-        player = self._player
     
         bullet = Actor()
 
