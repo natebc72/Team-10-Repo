@@ -39,8 +39,9 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('s'):
             self._direction_one = Point(0, constants.CELL_SIZE)
             
-        #frist tank fire
+        #first tank fire
         if self._keyboard_service.is_key_down('f'):
+            
             
           
         # second tank up
@@ -55,6 +56,8 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('l'):
 
         tank_one = cast.get_first_actor("tank1")
+        tank_one.fire_bullet(self._direction_one)
        
         tank_two = cast.get_first_actor("tank2")
+        tank_two.fire_bullet(self._direction_two)
         
