@@ -24,3 +24,5 @@ class Bullets(Actor):
         elif player == 2:
             self.set_color(constants.BLUE)
         
+        self.velocity = velocity
+        
