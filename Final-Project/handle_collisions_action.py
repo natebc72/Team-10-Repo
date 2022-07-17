@@ -7,8 +7,7 @@ class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
     
-    The responsibility of HandleCollisionsAction is to handle the situation when the snake collides
-    with the another snake, or the snake collides with its segments, or the game is over.
+    The responsibility of HandleCollisionsAction is to handle the situation when the bullet collides into a tank and causes a game over.
 
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
@@ -32,7 +31,7 @@ class HandleCollisionsAction(Action):
 
 
     def _handle_bullet_collision(self, cast):
-        """Sets the game over flag if the snake1 or snake2 collides with each other.
+        """Sets the game over flag if tank1 or tank2 are hit by a bullet.
         
         Args:
             cast (Cast): The cast of Actors in the game.
