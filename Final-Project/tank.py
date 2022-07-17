@@ -17,7 +17,7 @@ class Tank(Actor):
         self._body = []
         self._prepare_body()
         
-    def get_body():
+    def get_body(self):
         return self._body
         
     def _prepare_body(self):
@@ -35,7 +35,7 @@ class Tank(Actor):
         
         if self.player == 1:
             color = constants.BLUE 
-        if self.player == 2
+        if self.player == 2:
             color = constants.RED
             
         tank = Actor()
