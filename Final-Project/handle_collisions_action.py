@@ -40,8 +40,8 @@ class HandleCollisionsAction(Action):
         tank_one = cast.get_first_actor("tank1")
         tank_two = cast.get_first_actor("tank2")
 
-        tank_one_bullets = cast.get_actors("bullets1")
-        tank_two_bullets = cast.get_actors("bullets2")
+        tank_one_bullets = tank_one.get_bullets()[0:]
+        tank_two_bullets = tank_two.get_bullets()[0:]
 
         
         for bullet in tank_one_bullets:

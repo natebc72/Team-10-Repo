@@ -13,12 +13,15 @@ class Tank(Actor):
     def __init__(self, player):
         super().__init__()
         self.player = player
-
+        self._bullets = []
         self._body = []
         self._prepare_body()
         
     def get_body(self):
         return self._body
+    
+    def get_bullets(self):
+        return self._bullets
         
     def _prepare_body(self):
         if self.player == 1:
@@ -58,5 +61,6 @@ class Tank(Actor):
         if self.player == 1:
             bullet.set_color(constants.BLUE)
         if self.player == 2:
-            bullet.set_color(constants.RED)      
+            bullet.set_color(constants.RED)    
+        self._bullets.append(bullet)  
 
