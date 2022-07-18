@@ -30,35 +30,42 @@ class ControlActorsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
+        
         """
+        tank_one = cast.get_first_actor("tank1")
+        tank_two = cast.get_first_actor("tank2")
         # first tank up
         if self._keyboard_service.is_key_down('w'):
+            print("w")
             self._direction_one = Point(0, -constants.CELL_SIZE)
         
         # first tank down
         if self._keyboard_service.is_key_down('s'):
+            print("s")
             self._direction_one = Point(0, constants.CELL_SIZE)
             
         #first tank fire
         if self._keyboard_service.is_key_down('f'):
-            tank_one.fire_bullet(self._direction_one)
+            print("pew!")
+            tank_one.fire_bullet(1)
             
           
         # second tank up
         if self._keyboard_service.is_key_down('u'):
+            print("u")
             self._direction_two = Point(0, -constants.CELL_SIZE)
         
         # second tank down
         if self._keyboard_service.is_key_down('j'):
+            print("j")
             self._direction_two = Point(0, constants.CELL_SIZE)
             
         # second tank fire
         if self._keyboard_service.is_key_down('l'):
-            tank_two.fire_bullet(self._direction_two)
+            print("pew!")
+            tank_two.fire_bullet(2)
         
         
-        tank_one = cast.get_first_actor("tank1")
-       
-        tank_two = cast.get_first_actor("tank2")
+
         
         

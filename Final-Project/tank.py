@@ -22,7 +22,7 @@ class Tank(Actor):
     
     def get_bullets(self):
         return self._bullets
-        
+    
     def _prepare_body(self):
         if self.player == 1:
             x = int(constants.MAX_X / 7)
@@ -34,7 +34,7 @@ class Tank(Actor):
             text = "-=="
 
         position = Point(x - 1 * constants.CELL_SIZE, y)
-        #velocity = Point(1 * constants.CELL_SIZE, 0)
+        velocity = Point(1 * constants.CELL_SIZE, 5)
         
         if self.player == 1:
             color = constants.BLUE 
@@ -43,12 +43,12 @@ class Tank(Actor):
             
         tank = Actor()
         tank.set_position(position)
-        #tank.set_velocity(velocity)
+        tank.set_velocity(velocity)
         tank.set_text(text)
         tank.set_color(color)
         self._body.append(tank)
 
-    def fire_bullet(self):
+    def fire_bullet(self, player):
     
         bullet = Actor()
 
