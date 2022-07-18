@@ -51,7 +51,7 @@ class Tank(Actor):
     def fire_bullet(self, player):
     
         bullet = Actor()
-
+        self.player = player
         velocity = bullet.get_velocity()
         offset = velocity.reverse()
         position = bullet.get_position().add(offset)
