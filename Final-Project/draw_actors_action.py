@@ -26,16 +26,14 @@ class DrawActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        snake_one = cast.get_first_actor("snake1")
-        snake_two = cast.get_first_actor("snake2")
-        segments_one = snake_one.get_segments()
-        segments_two = snake_two.get_segments()
+        tank1 = cast.get_first_actor("tank1")
+        tank2 = cast.get_first_actor("tank2")
         messages = cast.get_actors("messages")
-        snake_one.grow_tail(1)
-        snake_two.grow_tail(1)
+        tank_one = tank1.get_body()
+        tank_two = tank2.get_body()
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actors(segments_one)
-        self._video_service.draw_actors(segments_two)
+        self._video_service.draw_actors(tank_one)
+        self._video_service.draw_actors(tank_two)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()

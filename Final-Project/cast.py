@@ -21,9 +21,11 @@ class Cast:
         """
         if not group in self._actors.keys():
             self._actors[group] = []
+            print(f'Added the following group: {group}')
             
         if not actor in self._actors[group]:
             self._actors[group].append(actor)
+            print(f'Added the following actor: {actor}' )
 
     def get_actors(self, group):
         """Gets the actors in the given group.

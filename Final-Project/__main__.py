@@ -21,6 +21,7 @@ def main():
     cast = Cast()
     cast.add_actor("tank1", Tank(1))
     cast.add_actor("tank2", Tank(2))
+    
    
     # start the game
     keyboard_service = KeyboardService()
