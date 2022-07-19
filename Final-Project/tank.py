@@ -22,6 +22,8 @@ class Tank(Actor):
         # move all segments
         for tank in self._body:
             tank.move_next()
+        for bullet in self._bullets:
+            bullet.move_next()
 
     def change_direction(self, velocity):
         self._body[0].set_velocity(velocity)
@@ -58,7 +60,7 @@ class Tank(Actor):
         bullet = Actor()
         self.player = player
         bullet.set_text("o")
-        position = self._body.get_position()
+        position = self._body[0].get_position()
         bullet.set_position(position)
         if self.player == 1:
             bullet.set_color(constants.BLUE)
