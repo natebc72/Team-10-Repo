@@ -22,18 +22,21 @@ class Tank(Actor):
         # move all segments
         for tank in self._body:
             tank.move_next()
+
+    def change_direction(self, velocity):
+        self._body[0].set_velocity(velocity)
     
     def _prepare_body(self):
         if self.player == 1:
             x = int(constants.MAX_X / 7)
             y = int(constants.MAX_Y / 2)
             text = "==-"
-            velocity = Point(0, 0)
+            #velocity = Point(0, 0)
         if self.player == 2:
             x = int(constants.MAX_X / 1.175)
             y = int(constants.MAX_Y / 2)
             text = "-=="
-            velocity = Point(0, 0)
+            #velocity = Point(0, 0)
 
         position = Point(x - 1 * constants.CELL_SIZE, y)
 
@@ -45,7 +48,7 @@ class Tank(Actor):
             
         tank = Actor()
         tank.set_position(position)
-        tank.set_velocity(velocity)
+        #tank.set_velocity(velocity)
         tank.set_text(text)
         tank.set_color(color)
         self._body.append(tank)

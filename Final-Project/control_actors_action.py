@@ -66,8 +66,14 @@ class ControlActorsAction(Action):
             print("pew!")
             tank_two.fire_bullet(2)
         
-        tank_one.set_velocity(self._direction_one)
-        tank_two.set_velocity(self._direction_two)
+        
+        direction_one = self._direction_one.scale(constants.CELL_SIZE)
+        direction_two = self._direction_two.scale(constants.CELL_SIZE)
+
+        tank_one.change_direction(direction_one)
+        tank_two.change_direction(direction_two)
+
+
         
         
         
