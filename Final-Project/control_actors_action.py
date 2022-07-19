@@ -21,8 +21,8 @@ class ControlActorsAction(Action):
             keyboard_service (KeyboardService): An instance of KeyboardService.
         """
         self._keyboard_service = keyboard_service
-        self._direction_one = Point(constants.CELL_SIZE, 0)
-        self._direction_two = Point(constants.CELL_SIZE, 0)
+        self._direction_one = Point(0, 0)
+        self._direction_two = Point(0, 0)
 
     def execute(self, cast, script):
         """Executes the control actors action.
@@ -38,12 +38,12 @@ class ControlActorsAction(Action):
         # first tank up
         if self._keyboard_service.is_key_down('w'):
             print("w")
-            self._direction_one = Point(0, 1)
+            self._direction_one = Point(0, -1)
         
         # first tank down
         if self._keyboard_service.is_key_down('s'):
             print("s")
-            self._direction_one = Point(0, -1)
+            self._direction_one = Point(0, 1)
             
         #first tank fire
         if self._keyboard_service.is_key_down('f'):
@@ -54,12 +54,12 @@ class ControlActorsAction(Action):
         # second tank up
         if self._keyboard_service.is_key_down('u'):
             print("u")
-            self._direction_two = Point(0, 1)
+            self._direction_two = Point(0, -1)
         
         # second tank down
         if self._keyboard_service.is_key_down('j'):
             print("j")
-            self._direction_two = Point(0, -1)
+            self._direction_two = Point(0, 1)
             
         # second tank fire
         if self._keyboard_service.is_key_down('l'):
