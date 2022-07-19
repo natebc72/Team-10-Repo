@@ -37,33 +37,27 @@ class ControlActorsAction(Action):
         
         # first tank up
         if self._keyboard_service.is_key_down('w'):
-            print("w")
             self._direction_one = Point(0, -1)
         
         # first tank down
         if self._keyboard_service.is_key_down('s'):
-            print("s")
             self._direction_one = Point(0, 1)
             
         #first tank fire
         if self._keyboard_service.is_key_down('f'):
-            print("pew!")
             tank_one.fire_bullet(1)
             
           
         # second tank up
         if self._keyboard_service.is_key_down('u'):
-            print("u")
             self._direction_two = Point(0, -1)
         
         # second tank down
         if self._keyboard_service.is_key_down('j'):
-            print("j")
             self._direction_two = Point(0, 1)
             
         # second tank fire
         if self._keyboard_service.is_key_down('l'):
-            print("pew!")
             tank_two.fire_bullet(2)
         
         

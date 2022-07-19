@@ -24,7 +24,7 @@ class Tank(Actor):
             tank.move_next()
         for bullet in self._bullets:
             bullet.move_next()
-
+            
     def change_direction(self, velocity):
         self._body[0].set_velocity(velocity)
     
