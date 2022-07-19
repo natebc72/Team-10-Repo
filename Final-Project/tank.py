@@ -57,15 +57,15 @@ class Tank(Actor):
     
         bullet = Actor()
         self.player = player
-        velocity = bullet.get_velocity()
-        offset = velocity.reverse()
-        position = bullet.get_position().add(offset)
-        bullet.set_position(position)
-        bullet.set_velocity(velocity)
         bullet.set_text("o")
+        position = self._body.get_position()
+        bullet.set_position(position)
         if self.player == 1:
             bullet.set_color(constants.BLUE)
+            velocity = Point(1 * constants.CELL_SIZE, 0)
         if self.player == 2:
             bullet.set_color(constants.RED)    
+            velocity = Point(-1 * constants.CELL_SIZE, 0)
+        bullet.set_velocity(velocity)
         self._bullets.append(bullet)  
 

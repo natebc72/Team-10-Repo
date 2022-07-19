@@ -39,11 +39,11 @@ class HandleCollisionsAction(Action):
         tank_one = cast.get_first_actor("tank1")
         tank_two = cast.get_first_actor("tank2")
 
-        tank_one_bullets = tank_one.get_bullets()[0:]
-        tank_two_bullets = tank_two.get_bullets()[0:]
+        tank_one_bullets = tank_one.get_bullets()
+        tank_two_bullets = tank_two.get_bullets()
 
         
-        for bullet in tank_one_bullets:
+        """for bullet in tank_one_bullets:
             if tank_two.get_position().equals(bullet.get_position()):
                 self._is_game_over = True
                 self._winner = 1
@@ -52,7 +52,7 @@ class HandleCollisionsAction(Action):
             if tank_one.get_position().equals(bullet.get_position()):
                 self._is_game_over = True
                 self._winner = 2
-                #tank2 win
+                #tank2 win"""
 
     def _handle_game_over(self, cast):
         """Shows the who won message.

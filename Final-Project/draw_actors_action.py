@@ -31,9 +31,13 @@ class DrawActorsAction(Action):
         messages = cast.get_actors("messages")
         tank_one = tank1.get_body()
         tank_two = tank2.get_body()
+        bullets_one = tank1.get_bullets()
+        bullets_two = tank2.get_bullets()
 
         self._video_service.clear_buffer()
         self._video_service.draw_actors(tank_one)
         self._video_service.draw_actors(tank_two)
+        self._video_service.draw_actors(bullets_one)
+        self._video_service.draw_actors(bullets_two)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()
