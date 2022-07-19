@@ -4,12 +4,7 @@ from point import Point
 
 
 class Tank(Actor):
-    """
-    <=>
-      P
-    |/\|
-    |\/|
-    """
+
     def __init__(self, player):
         super().__init__()
         self.player = player
@@ -22,19 +17,27 @@ class Tank(Actor):
     
     def get_bullets(self):
         return self._bullets
+
+    def move_next(self):
+        # move all segments
+        for tank in self._body:
+            tank.move_next()
+
     
     def _prepare_body(self):
         if self.player == 1:
             x = int(constants.MAX_X / 7)
             y = int(constants.MAX_Y / 2)
             text = "==-"
+            velocity = Point(1 * constants.CELL_SIZE, 5)
         if self.player == 2:
             x = int(constants.MAX_X / 1.175)
             y = int(constants.MAX_Y / 2)
             text = "-=="
+            velocity = Point(0, 0)
 
         position = Point(x - 1 * constants.CELL_SIZE, y)
-        velocity = Point(1 * constants.CELL_SIZE, 5)
+
         
         if self.player == 1:
             color = constants.BLUE 

@@ -34,15 +34,16 @@ class ControlActorsAction(Action):
         """
         tank_one = cast.get_first_actor("tank1")
         tank_two = cast.get_first_actor("tank2")
+        
         # first tank up
         if self._keyboard_service.is_key_down('w'):
             print("w")
-            self._direction_one = Point(0, -constants.CELL_SIZE)
+            self._direction_one = Point(-constants.CELL_SIZE, 0)
         
         # first tank down
         if self._keyboard_service.is_key_down('s'):
             print("s")
-            self._direction_one = Point(0, constants.CELL_SIZE)
+            self._direction_one = Point(constants.CELL_SIZE, 0)
             
         #first tank fire
         if self._keyboard_service.is_key_down('f'):
@@ -53,17 +54,19 @@ class ControlActorsAction(Action):
         # second tank up
         if self._keyboard_service.is_key_down('u'):
             print("u")
-            self._direction_two = Point(0, -constants.CELL_SIZE)
+            self._direction_two = Point(-constants.CELL_SIZE, 0)
         
         # second tank down
         if self._keyboard_service.is_key_down('j'):
             print("j")
-            self._direction_two = Point(0, constants.CELL_SIZE)
+            self._direction_two = Point(constants.CELL_SIZE, 0)
             
         # second tank fire
         if self._keyboard_service.is_key_down('l'):
             print("pew!")
             tank_two.fire_bullet(2)
+        
+        return self._direction_two, self._direction_one
         
         
 

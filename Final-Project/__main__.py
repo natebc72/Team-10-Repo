@@ -9,8 +9,6 @@ from draw_actors_action import DrawActorsAction
 from director import Director
 from keyboard_service import KeyboardService
 from video_service import VideoService
-from color import Color
-from point import Point
 from tank import Tank
 
 
