@@ -46,7 +46,7 @@ class HandleCollisionsAction(Action):
         tank_two_bullets = tank_two.get_bullets()
 
 
-        
+        # tank1 bullets trying to hit tank2
         for bullet in tank_one_bullets:
             bullet_position = bullet.get_position()
             tank_position = tank_two_body[0].get_position()
@@ -55,10 +55,12 @@ class HandleCollisionsAction(Action):
                     tank_one_bullets.remove(bullet)
                     self._is_game_over = True
                     self._winner = 1
-                    #tank1 win
+                    # tank1 win
                 else:
+                    # bullet gets deleted
                     tank_one_bullets.remove(bullet)
 
+        # tank2 bullets trying to hit tank1
         for bullet in tank_two_bullets:
             bullet_position = bullet.get_position()
             tank_position = tank_one_body[0].get_position()
@@ -67,8 +69,9 @@ class HandleCollisionsAction(Action):
                     tank_two_bullets.remove(bullet)
                     self._is_game_over = True
                     self._winner = 2
-                    #tank1 win
+                    # tank2 win
                 else:
+                    # bullet gets deleted
                     tank_two_bullets.remove(bullet)
 
     def _handle_game_over(self, cast):

@@ -60,10 +60,11 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('l'):
             tank_two.fire_bullet(2)
         
-        
+        #Adjusts to cell size
         direction_one = self._direction_one.scale(constants.CELL_SIZE)
         direction_two = self._direction_two.scale(constants.CELL_SIZE)
 
+        #Actually changes the direction
         tank_one.change_direction(direction_one)
         tank_two.change_direction(direction_two)
 
