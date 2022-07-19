@@ -60,9 +60,7 @@ class Tank(Actor):
         self._body.append(tank)
 
     def fire_bullet(self, player):
-        """
-        This method creates the bullets for each tank.
-        """
+        #creates and fires the projectile
         bullet = Actor()
         self.player = player
         bullet.set_text("o")
