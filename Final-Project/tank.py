@@ -22,14 +22,13 @@ class Tank(Actor):
         # move all segments
         for tank in self._body:
             tank.move_next()
-
     
     def _prepare_body(self):
         if self.player == 1:
             x = int(constants.MAX_X / 7)
             y = int(constants.MAX_Y / 2)
             text = "==-"
-            velocity = Point(1 * constants.CELL_SIZE, 5)
+            velocity = Point(0, 0)
         if self.player == 2:
             x = int(constants.MAX_X / 1.175)
             y = int(constants.MAX_Y / 2)
